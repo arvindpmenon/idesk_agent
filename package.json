@@ -1,0 +1,35 @@
+{
+  "name": "idesk-activity-monitor",
+  "version": "1.0.0",
+  "description": "Lightweight desktop browser activity monitor",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:main\" \"npm run dev:renderer\"",
+    "dev:main": "tsc -p tsconfig.main.json && electron dist/main/main.js --dev",
+    "dev:renderer": "vite",
+    "build": "npm run build:main && npm run build:renderer",
+    "build:main": "tsc -p tsconfig.main.json",
+    "build:renderer": "vite build",
+    "start": "electron dist/main/main.js"
+  },
+  "keywords": ["electron", "browser-tracking", "activity-monitor"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "active-win": "^9.0.0",
+    "electron": "^28.0.0",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.534.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.12.0",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^8.0.0",
+    "typescript": "^5.9.2",
+    "vite": "^7.0.6"
+  }
+}
